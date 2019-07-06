@@ -2,7 +2,11 @@
 offensiveProgrammer
 
 [localip]
-127.0.0.1
+localhost
 
 [localipiconfig]
-192.168.0.105
+localhost ansible_ssh_pass='godwin' ansible_ssh_user=godwin
+
+
+[localhost]
+localhost

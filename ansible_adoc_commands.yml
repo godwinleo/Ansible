@@ -16,3 +16,10 @@ $ ansible all -m ping -u bruce -b --become-user batman
 
 
 $ ansible all -a "/bin/echo hello"
+
+$ ansible-galaxy init project
+
+config file
+ - /etc/ansible/ansible.cfg
+
+ or export ANSIBLE_CONFIG=~/ansible.cfg

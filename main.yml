@@ -1,0 +1,26 @@
+- hosts: current
+  sudo: true
+  gather_facts: true
+  vars:
+    software: mongodb-software
+    service: mongodb-service
+
+  tasks:
+    - name: install {{ software }}
+      apt:
+        name: mongodb
+        update_cache: yes
+      # ignore_errors: true
+
+    - name: copy the config files
+      copy:
+          dest: /tmp/hosts
+          src: hosts  
+          
+
+    - name: restart {{ service }}
+      service:
+          name: mongodb # required. Name of the service.
+          state: stopped
+          
+        
